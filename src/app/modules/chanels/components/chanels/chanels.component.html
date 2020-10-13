@@ -1,0 +1,16 @@
+<div class="fx-flex fx-column">
+  <span class="fx-flex total-container">
+    {{chanelsResponse.total}}
+  </span>
+  <div>
+    <ng-container *ngFor="let chanel of chanelsResponse.channelDetails;  let i=index; trackBy: trackByFunction">
+      <ng-container *ngIf="i <= batchSize">
+        <img *tile="chanel">
+      </ng-container>
+    </ng-container>
+  </div>
+  <div (click)="loadMore()" class="fx-flex fx-row fx-layout-center-stretch more-container">
+    <!-- <mat-icon>more</mat-icon> -->
+    <span>Показать ещё</span>
+  </div>
+</div>

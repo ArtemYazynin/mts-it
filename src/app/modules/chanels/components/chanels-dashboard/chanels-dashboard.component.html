@@ -1,0 +1,19 @@
+<mat-tab-group>
+  <mat-tab label="First">
+    <ng-template matTabContent>
+      Отсутствуют данные
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Second">
+    <ng-template matTabContent>
+      Отсутствуют данные
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Телеканалы">
+    <ng-template matTabContent >
+      <ng-container *ngIf="chanelsResponse$ | async as chanelsResponse">
+        <app-chanels [chanelsResponse]="chanelsResponse"></app-chanels>
+      </ng-container>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
